@@ -1,0 +1,103 @@
+.container {
+  max-width: 1920px;
+}
+
+.home__container {
+  max-width: 1260px;
+  margin: 20px auto;
+}
+
+.header {
+  background-color: #ede7e7;
+}
+
+.header__container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 20px 0;
+  gap: 20px;
+}
+
+.title {
+  font-family: "Courier New", sans-serif;
+  font-size: 50px;
+  font-weight: 700;
+  color: #000;
+}
+
+.sorting__select {
+  width: 16%;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* main section */
+
+.search__results_title {
+  text-align: center;
+  font-family: "Raleway", sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 32px;
+  margin: 0 0 24px;
+}
+
+.books__container {
+  margin: 30px 50px;
+}
+
+.books__container_card {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+/* books detail */
+
+.books__container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.books__container_image {
+  width: 40%;
+  height: 50vh;
+  background-color: #989898;
+}
+
+.books__container_info {
+  width: 60%;
+  padding-left: 50px;
+}
+
+.subtitle__category {
+  padding: 20px 0;
+  font-family: sans-serif;
+  font-size: 16px;
+  color: #9f9e9e;
+  line-height: 32px;
+}
+.books__detail_title {
+  padding-bottom: 10px;
+  font-size: 28px;
+  font-family: "Signika", sans-serif;
+  padding-bottom: 10px;
+}
+.books__author {
+  padding-bottom: 20px;
+  text-decoration: underline;
+  color: #c8c8c8;
+}
+
+.books__dec_block {
+  border: 1px solid #000;
+  width: 70%;
+  min-height: 200px;
+}
+.books_description {
+  padding: 5px;
+  font-family: "Inder", sans-serif;
+  line-height: 28px;
+  font-size: 18px;
+}
