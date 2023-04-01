@@ -19,6 +19,7 @@ const FormTextField: React.FC<IProps> = (props) => {
     placeholder,
     value,
     onChange,
+    onKeyPress,
   } = props;
 
   return (
@@ -34,6 +35,7 @@ const FormTextField: React.FC<IProps> = (props) => {
       placeholder={placeholder}
       value={value}
       onChange={onChange}
+      onKeyPress={onKeyPress}
       InputProps={{
         endAdornment: (
           <InputAdornment sx={{ cursor: "pointer" }} position={position}>

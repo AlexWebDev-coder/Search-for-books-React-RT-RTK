@@ -1,28 +1,25 @@
-import * as React from "react";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
-import Typography from "@mui/material/Typography";
 import { CardActionArea } from "@mui/material";
+import { IProps } from "./types";
 
-const BooksCard = () => {
+const BooksCard: React.FC<IProps> = ({ book }) => {
+  const { volumeInfo } = book;
+
   return (
-    <Card sx={{ maxWidth: 345 }}>
+    <Card sx={{ maxHeight: "auto" }}>
       <CardActionArea>
         <CardMedia
           component="img"
           height="140"
-          image="/static/images/cards/contemplative-reptile.jpg"
+          image={volumeInfo?.imageLinks?.smallThumbnail}
           alt="green iguana"
         />
         <CardContent>
-          <Typography gutterBottom variant="h5" component="div">
-            Lizard
-          </Typography>
-          <Typography variant="body2" color="text.secondary">
-            Lizards are a widespread group of squamate reptiles, with over 6,000
-            species, ranging across all continents except Antarctica
-          </Typography>
+          <p className="books__category">{volumeInfo?.categories?.[0]}</p>
+          <h1 className="card__title">{volumeInfo?.title}</h1>
+          <p className="books__author">{volumeInfo?.authors}</p>
         </CardContent>
       </CardActionArea>
     </Card>

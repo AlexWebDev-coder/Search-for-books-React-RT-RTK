@@ -1,24 +1,36 @@
-import { useState } from "react";
+import { useEffect } from "react";
 import SearchIcon from "@mui/icons-material/Search";
-import FormTextField from "../../../components/form/textfield";
-import FormSelect from "../../../components/form/select";
+import FormTextField from "src/components/form/textfield";
+import FormSelect from "src/components/form/select";
+import { observer } from "mobx-react";
+import store from "src/store";
+
+const valuesSelectCategories = [
+  "all",
+  "art",
+  "biography",
+  "computers",
+  "history",
+  "medical",
+  "poetry",
+];
+
+const valueSelectSorting = ["relevance", "newest"];
 
 const DefaultLayoutHeader = () => {
-  const [search, setSearch] = useState<string>("");
-  const [value, setValue] = useState<string>("all");
-  const [sort, setSort] = useState<string>("elevance");
+  const hanleSearchBooks = () => {
+    store.getBooks();
+  };
 
-  const valuesSelectCategories = [
-    "all",
-    "art",
-    "biography",
-    "computers",
-    "history",
-    "medical",
-    "poetry",
-  ];
+  useEffect(() => {
+    store.getBooks();
+  }, []);
 
-  const valueSelectSorting = ["elevance", "newest"];
+  const handleKeyPress = (e: any) => {
+    if (e.key === "Enter") {
+      hanleSearchBooks();
+    }
+  };
 
   return (
     <header className="header">
@@ -29,28 +41,29 @@ const DefaultLayoutHeader = () => {
           </div>
           <div className="search__input">
             <FormTextField
-              icon={<SearchIcon />}
-              name="search"
+              icon={<SearchIcon onClick={hanleSearchBooks} />}
+              name="searchValue"
               variant="outlined"
               margin="normal"
               placeholder="Write this..."
-              value={search}
-              onChange={(e) => setSearch(e.target.value)}
+              value={store.searchValue}
+              onChange={(e) => store.setSearchValue(e.target.value)}
+              onKeyPress={handleKeyPress}
             />
           </div>
           <div className="sorting__select">
             <div className="sorting__select_categories">
               <FormSelect
-                value={value}
-                onChange={(e) => setValue(e.target.value as string)}
+                value={store.category}
+                onChange={(e) => store.setCategory(e.target.value)}
                 values={valuesSelectCategories}
                 inputLabel="Categories"
               />
             </div>
             <div className="sorting__select_sortingBy">
               <FormSelect
-                value={sort}
-                onChange={(e) => setSort(e.target.value as string)}
+                value={store.sortingBy}
+                onChange={(e) => store.setSortBy(e.target.value as string)}
                 values={valueSelectSorting}
                 inputLabel="Sorting By"
               />
@@ -62,4 +75,4 @@ const DefaultLayoutHeader = () => {
   );
 };
 
-export default DefaultLayoutHeader;
+export default observer(DefaultLayoutHeader);

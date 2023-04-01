@@ -7,7 +7,7 @@ function App() {
     <div className="home__container">
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/books-detail" element={<BooksDetail />} />
+        <Route path="/books-detail/:id" element={<BooksDetail />} />
       </Routes>
     </div>
   );

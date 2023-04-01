@@ -13,6 +13,7 @@ export interface IProps {
   rows?: number;
   placeholder?: string;
   value: string | number;
+  onKeyPress?: (e: any) => void;
   onChange: (
     event: React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>
   ) => void;

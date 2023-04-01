@@ -3,16 +3,18 @@ import ReactDOM from "react-dom/client";
 import App from "./App";
 import AppLayout from "./layout";
 import { BrowserRouter as Router } from "react-router-dom";
+import { Provider } from "mobx-react";
+import store from "./store";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
 root.render(
-  <React.StrictMode>
-    <Router>
-      <AppLayout>
+  <Provider store={store}>
+    <AppLayout>
+      <Router>
         <App />
-      </AppLayout>
-    </Router>
-  </React.StrictMode>
+      </Router>
+    </AppLayout>
+  </Provider>
 );
