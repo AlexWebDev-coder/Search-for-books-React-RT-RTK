@@ -18,7 +18,7 @@ const BooksCard: React.FC<IProps> = ({ book }) => {
         />
         <CardContent>
           <p className="books__category">{volumeInfo?.categories?.[0]}</p>
-          <h1 className="card__title">{volumeInfo?.title}</h1>
+          <h1 className="books__title">{volumeInfo?.title}</h1>
           <p className="books__author">{volumeInfo?.authors}</p>
         </CardContent>
       </CardActionArea>
