@@ -4,18 +4,7 @@ import FormTextField from "src/components/form/textfield";
 import FormSelect from "src/components/form/select";
 import { observer } from "mobx-react";
 import store from "src/store";
-
-const valuesSelectCategories = [
-  "all",
-  "art",
-  "biography",
-  "computers",
-  "history",
-  "medical",
-  "poetry",
-];
-
-const valueSelectSorting = ["relevance", "newest"];
+import { valueSelectSorting, valuesSelectCategories } from "./filter";
 
 const DefaultLayoutHeader = () => {
   const hanleSearchBooks = () => {

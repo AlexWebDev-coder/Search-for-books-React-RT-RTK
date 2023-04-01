@@ -34,11 +34,10 @@ class BookStore {
       if (!this.searchValue) return;
       this.isLoading = true;
 
-      // const categoryCondition =
-      //   this.category !== "all" ? `${"+subject:" + this.category}` : "";
+      const subjectCategory = this.category === "all" ? "" : `${this.category}`;
 
       const response = await api.get(
-        `volumes?q=${this.searchValue}&orderBy=${this.sortingBy}&maxResults=30&startIndex=${this.startIndex}&key=${API_KEY}`
+        `volumes?q=${this.searchValue}&subject:${subjectCategory}&orderBy=${this.sortingBy}&maxResults=30&startIndex=${this.startIndex}&key=${API_KEY}`
       );
 
       if (!this.flagLoadMore) this.books = response.data;
