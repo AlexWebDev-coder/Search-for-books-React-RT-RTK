@@ -16,17 +16,8 @@
     "jsx": "preserve",
     "checkJs": true,
     "incremental": true,
-    "baseUrl": ".",
-    "paths": {
-      "@/*": ["./*"]
-    }
+    "allowSyntheticDefaultImports": true
   },
-  "include": [
-    "next-env.d.ts",
-    "**/*.ts",
-    "**/*.tsx",
-    "middleware.ts",
-    "next.config.js"
-  ],
+  "include": ["**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules"]
 }

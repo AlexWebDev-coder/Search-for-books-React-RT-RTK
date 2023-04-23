@@ -4,7 +4,7 @@ import App from "./App";
 import AppLayout from "./layout";
 import { BrowserRouter as Router } from "react-router-dom";
 import { Provider } from "mobx-react";
-import store from "./store";
+import { store } from "../src/store/store";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
