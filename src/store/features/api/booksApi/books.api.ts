@@ -1,10 +1,9 @@
-import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/dist/query";
-import { API_KEY, API_URL } from "../../../api/constants";
-import { IParamsQuery } from "./books.type";
-import { IBookData } from "./books.type";
+import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
+import { API_KEY, API_URL } from "../../../../api/constants";
+import { IParamsQuery, IBookData } from "./books.type";
 
 export const booksApi = createApi({
-  reducerPath: "books",
+  reducerPath: "api/books",
   baseQuery: fetchBaseQuery({ baseUrl: API_URL }),
   endpoints: (build) => ({
     getBooks: build.query<IBookData, IParamsQuery>({
@@ -14,4 +13,4 @@ export const booksApi = createApi({
   }),
 });
 
-export default {} = booksApi;
+export const { useGetBooksQuery } = booksApi;

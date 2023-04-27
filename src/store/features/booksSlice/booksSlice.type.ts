@@ -1,4 +1,4 @@
-import { IBookData } from "../../../hooks/query/booksApi/books.type";
+import { IBookData } from "../api/booksApi/books.type";
 
 export interface IState {
   booksData: IBookData;

@@ -3,6 +3,13 @@ export interface IBookData {
   totalItems: number;
 }
 
+export interface IParamsQuery {
+  searchValue: string;
+  subjectCategory: string;
+  sortingBy: string;
+  startIndex: number;
+}
+
 export interface IBookItem {
   id: string;
   volumeInfo: {

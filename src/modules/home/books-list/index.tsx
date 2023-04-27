@@ -1,5 +1,6 @@
 import { FC } from "react";
 import { useNavigate } from "react-router-dom";
+import { useGetBooksQuery } from "../../../store/features/api/booksApi/books.api";
 
 // interface IProps {
 //   bookStore: typeof BookStore;
@@ -7,6 +8,8 @@ import { useNavigate } from "react-router-dom";
 
 const BooksList = () => {
   const navigate = useNavigate();
+
+  // const { data: books } = useGetBooksQuery({});
 
   const handleCardDetail = (id: string) => {
     navigate(`/books-detail/${id}`);

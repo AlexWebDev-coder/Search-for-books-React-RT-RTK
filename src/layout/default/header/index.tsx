@@ -1,25 +1,25 @@
 import { useEffect } from "react";
 import SearchIcon from "@mui/icons-material/Search";
-import FormTextField from "src/components/form/textfield";
-import FormSelect from "src/components/form/select";
+// import FormTextField from "src/components/form/textfield";
+// import FormSelect from "src/components/form/select";
 import { observer } from "mobx-react";
-import store from "src/store";
+// import store from "src/store";
 import { valueSelectSorting, valuesSelectCategories } from "./filter";
 
 const DefaultLayoutHeader = () => {
-  const hanleSearchBooks = () => {
-    store.getBooks();
-  };
+  // const hanleSearchBooks = () => {
+  //   store.getBooks();
+  // };
 
-  useEffect(() => {
-    store.getBooks();
-  }, []);
+  // useEffect(() => {
+  //   store.getBooks();
+  // }, []);
 
-  const handleKeyPress = (e: any) => {
-    if (e.key === "Enter") {
-      hanleSearchBooks();
-    }
-  };
+  // const handleKeyPress = (e: any) => {
+  //   if (e.key === "Enter") {
+  //     hanleSearchBooks();
+  //   }
+  // };
 
   return (
     <header className="header">
@@ -29,7 +29,7 @@ const DefaultLayoutHeader = () => {
             <h1 className="title">Search for books</h1>
           </div>
           <div className="search__input">
-            <FormTextField
+            {/* <FormTextField
               icon={<SearchIcon onClick={hanleSearchBooks} />}
               name="searchValue"
               variant="outlined"
@@ -38,24 +38,24 @@ const DefaultLayoutHeader = () => {
               value={store.searchValue}
               onChange={(e) => store.setSearchValue(e.target.value)}
               onKeyPress={handleKeyPress}
-            />
+            /> */}
           </div>
           <div className="sorting__select">
             <div className="sorting__select_categories">
-              <FormSelect
+              {/* <FormSelect
                 value={store.category}
                 onChange={(e) => store.setCategory(e.target.value)}
                 values={valuesSelectCategories}
                 inputLabel="Categories"
-              />
+              /> */}
             </div>
             <div className="sorting__select_sortingBy">
-              <FormSelect
+              {/* <FormSelect
                 value={store.sortingBy}
                 onChange={(e) => store.setSortBy(e.target.value as string)}
                 values={valueSelectSorting}
                 inputLabel="Sorting By"
-              />
+              /> */}
             </div>
           </div>
         </div>

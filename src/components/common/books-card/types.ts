@@ -1,5 +1,5 @@
-import { IBookItem } from "src/store/types";
+// import { IBookItem } from "src/store/types";
 
 export interface IProps {
-  book: IBookItem;
+  book: any;
 }

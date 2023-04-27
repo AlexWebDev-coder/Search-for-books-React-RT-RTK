@@ -1,6 +1,6 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { IState } from "./booksSlice.type";
-import { IBookData } from "../../../hooks/query/booksApi/books.type";
+import { IBookData } from "../api/booksApi/books.type";
 
 const initialState: IState = {
   booksData: { items: [], totalItems: 0 },
